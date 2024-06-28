@@ -6,7 +6,7 @@ const Header = () => {
     const isSticky = useStickyHeader();
 
     return (
-        <HeaderContainer isSticky={isSticky}>
+        <HeaderContainer $isSticky={isSticky}>
             <Nav>
                 <Logo>HackSoft</Logo>
             </Nav>

@@ -8,8 +8,12 @@ const Feed = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await getFeedData();
-            setPosts(data);
+            try {
+                const data = await getFeedData();
+                setPosts(data);
+            } catch (error) {
+                console.error("Error fetching feed data:", error);
+            }
         }
         fetchData();
     }, []);
