@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/ProfileCardStyles.css';
 import avatar from '../assets/avatar.png';
+import editIcon from '../assets/edit-icon.png';
 
 const ProfileCard = () => {
     return (
@@ -11,6 +12,7 @@ const ProfileCard = () => {
                     <h2>Ivan Goranov</h2>
                     <p>Candidate for a front-end developer at HackSoft</p>
                 </div>
+                <img src={editIcon} alt="Edit" className="edit-icon" />
             </div>
             <div className="profile-divider"></div>
             <div className="profile-stats">
