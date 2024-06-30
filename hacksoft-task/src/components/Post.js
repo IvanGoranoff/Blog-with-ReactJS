@@ -1,11 +1,12 @@
 import React from 'react';
 import '../styles/PostStyles.css';
+import avatar from '../assets/avatar.png';
 
 function Post() {
     return (
         <div className="post">
             <div className="post-header">
-                <img src="../assets/avatar.png" alt="Avatar" className="avatar" />
+                <img src={avatar} alt="Avatar" className="avatar" />
                 <div>
                     <p>Daniel Goshev</p>
                     <span>Software Developer, HackSoft</span>

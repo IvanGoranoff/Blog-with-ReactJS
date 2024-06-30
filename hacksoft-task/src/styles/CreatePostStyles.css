@@ -5,8 +5,8 @@
 }
 
 .create-post textarea {
-  width: 100%;
-  padding: 1rem;
+  width: 96%;
+  padding: 1rem 1rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   resize: none;
