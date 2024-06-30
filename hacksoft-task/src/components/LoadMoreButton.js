@@ -1,11 +1,9 @@
 import React from 'react';
 import '../styles/LoadMoreButtonStyles.css';
 
-const LoadMoreButton = ({ loadMore }) => {
+function LoadMoreButton() {
     return (
-        <button className="load-more" onClick={loadMore}>
-            Load more
-        </button>
+        <button className="load-more">Load more</button>
     );
 }
 

@@ -4,21 +4,19 @@
 
 .orange-background {
   position: absolute;
-  width: 806px;
-  height: 612px;
-  left: 635px;
-  top: 67px;
-  background: linear-gradient(to bottom, #FDB153 33%, #F8A43D 33%, #F68C0B 33%);
-  z-index: -1; /* Ensure it stays behind other elements */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #FDB153, #F8A43D, #F68C0B);
+  z-index: -1;
 }
 
 .content {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
-  position: relative;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .feed-container {
@@ -34,7 +32,7 @@
   }
 
   .orange-background {
-    display: none; 
+    display: none;
   }
 
   .feed-container {

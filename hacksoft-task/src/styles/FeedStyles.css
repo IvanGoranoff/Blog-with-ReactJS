@@ -3,8 +3,8 @@
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to match design */
-  margin-bottom: 2rem; /* Add margin to separate from the next feed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .load-more {

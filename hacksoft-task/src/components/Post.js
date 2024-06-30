@@ -1,20 +1,20 @@
 import React from 'react';
 import '../styles/PostStyles.css';
-import avatar from '../assets/avatar.png';
 
-const Post = ({ post }) => {
+function Post() {
     return (
         <div className="post">
             <div className="post-header">
-                <img src={avatar} alt={post.title} className="avatar" />
+                <img src="../assets/avatar.png" alt="Avatar" className="avatar" />
                 <div>
-                    <h3>{post.title}</h3>
-                    <p>Software Developer, HackSoft</p>
+                    <p>Daniel Goshev</p>
+                    <span>Software Developer, HackSoft</span>
                 </div>
             </div>
-            <p>{post.body}</p>
+            <div className="post-content">
+                <p>Despite our total project numbers only increasing by 2% compared to last month, the 58 projects we are working on contain a significant increase in deliverables.</p>
+            </div>
             <div className="post-footer">
-                <span>4 Likes</span>
                 <button>Like</button>
                 <button>Share</button>
             </div>

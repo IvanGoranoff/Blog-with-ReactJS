@@ -5,7 +5,7 @@ import avatar from '../assets/avatar.png';
 const ProfileCard = () => {
     return (
         <div className="profile-card">
-            <img src={avatar} alt="Ivaylo Bachvarov" className="avatar" />
+            <img src={avatar} alt="I" className="avatar" />
             <h2>Ivan Goranov</h2>
             <p>Candidate for a front-end developer at HackSoft</p>
             <div className="stats">

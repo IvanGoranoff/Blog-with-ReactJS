@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
-import { CreatePostContainer, TextArea, PostButton } from '../styles/CreatePostStyles';
+import React from 'react';
+import '../styles/CreatePostStyles.css';
 
-const CreatePost = ({ onPost }) => {
-    const [content, setContent] = useState('');
-
-    const handlePost = () => {
-        if (content.trim()) {
-            onPost(content);
-            setContent('');
-        }
-    };
-
+function CreatePost() {
     return (
-        <CreatePostContainer>
-            <TextArea
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                placeholder="Share text..."
-            />
-            <PostButton onClick={handlePost}>Post</PostButton>
-        </CreatePostContainer>
+        <div className="create-post">
+            <textarea placeholder="Share something to the community..."></textarea>
+            <button className="post-button">Post</button>
+        </div>
     );
-};
+}
 
 export default CreatePost;
