@@ -1,20 +1,21 @@
 import React from 'react';
 import useStickyHeader from '../hooks/useStickyHeader';
-import { HeaderContainer, Logo, UserAvatar } from '../styles/HeaderStyles';
+import '../styles/HeaderStyles.css';
 import logo from '../assets/hacksoftlogo.svg';
 import avatar from '../assets/avatar.png';
 
+
 const Header = () => {
-    const isSticky = useStickyHeader();
+    const sticky = useStickyHeader();
 
     return (
-        <HeaderContainer $isSticky={isSticky}>
-            <Logo>
-                <img src={logo} alt="HackSoft Logo" />
-            </Logo>
-            <UserAvatar src={avatar} alt="User Avatar" />
-        </HeaderContainer>
+        <header className={`header ${sticky ? 'sticky' : ''}`}>
+            <img src={logo} alt="HackSoft Logo" className="logo" />
+            <div className="profile-icon">
+                <img src={avatar} alt="Profile" />
+            </div>
+        </header>
     );
-};
+}
 
 export default Header;

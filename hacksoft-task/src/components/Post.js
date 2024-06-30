@@ -1,19 +1,25 @@
 import React from 'react';
-import { PostContainer, PostHeader, Author, TimeAgo, PostContent, PostActions } from '../styles/PostStyles';
+import '../styles/PostStyles.css';
+import avatar from '../assets/avatar.png';
 
-const Post = ({ author, content, likes, timeAgo }) => (
-    <PostContainer>
-        <PostHeader>
-            <Author>{author}</Author>
-            <TimeAgo>{timeAgo}</TimeAgo>
-        </PostHeader>
-        <PostContent>{content}</PostContent>
-        <PostActions>
-            <span>{likes} Likes</span>
-            <button>Like</button>
-            <button>Share</button>
-        </PostActions>
-    </PostContainer>
-);
+const Post = ({ post }) => {
+    return (
+        <div className="post">
+            <div className="post-header">
+                <img src={avatar} alt={post.title} className="avatar" />
+                <div>
+                    <h3>{post.title}</h3>
+                    <p>Software Developer, HackSoft</p>
+                </div>
+            </div>
+            <p>{post.body}</p>
+            <div className="post-footer">
+                <span>4 Likes</span>
+                <button>Like</button>
+                <button>Share</button>
+            </div>
+        </div>
+    );
+}
 
 export default Post;

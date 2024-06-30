@@ -1,18 +1,19 @@
 import React from 'react';
-import { Card, Avatar, Info, Name, Stats } from '../styles/ProfileCardStyles';
+import '../styles/ProfileCardStyles.css';
+import avatar from '../assets/avatar.png';
 
-const ProfileCard = ({ name, position, avatar, likes, posts }) => (
-    <Card>
-        <Avatar src={avatar} alt={`${name}'s avatar`} />
-        <Info>
-            <Name>{name}</Name>
-            <div>{position}</div>
-            <Stats>
-                <div>{likes} Likes</div>
-                <div>{posts} Posts</div>
-            </Stats>
-        </Info>
-    </Card>
-);
+const ProfileCard = () => {
+    return (
+        <div className="profile-card">
+            <img src={avatar} alt="Ivaylo Bachvarov" className="avatar" />
+            <h2>Ivan Goranov</h2>
+            <p>Candidate for a front-end developer at HackSoft</p>
+            <div className="stats">
+                <span>210 Likes</span>
+                <span>4 Posts</span>
+            </div>
+        </div>
+    );
+}
 
 export default ProfileCard;

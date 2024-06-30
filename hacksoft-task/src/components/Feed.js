@@ -1,37 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { FeedContainer, PostWrapper } from '../styles/FeedStyles';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Post from './Post';
-import { getFeedData } from '../services/api';
+import LoadMoreButton from './LoadMoreButton';
+import '../styles/FeedStyles.css';
 
 const Feed = () => {
     const [posts, setPosts] = useState([]);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const data = await getFeedData();
-                setPosts(data);
-            } catch (error) {
-                console.error("Error fetching feed data:", error);
-            }
+        fetchPosts();
+    }, [page]);
+
+    const fetchPosts = async () => {
+        try {
+            const response = await axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`);
+            setPosts(prevPosts => [...prevPosts, ...response.data]);
+        } catch (error) {
+            console.error('Error fetching posts:', error);
         }
-        fetchData();
-    }, []);
+    };
+
+    const loadMorePosts = () => {
+        setPage(prevPage => prevPage + 1);
+    };
 
     return (
-        <FeedContainer>
+        <div className="feed">
             {posts.map(post => (
-                <PostWrapper key={post.id}>
-                    <Post
-                        author={post.author}
-                        content={post.content}
-                        likes={post.likes}
-                        timeAgo={post.timeAgo}
-                    />
-                </PostWrapper>
+                <Post key={post.id} post={post} />
             ))}
-        </FeedContainer>
+            <LoadMoreButton loadMore={loadMorePosts} />
+        </div>
     );
-};
+}
 
 export default Feed;

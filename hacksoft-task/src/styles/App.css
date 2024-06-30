@@ -1,0 +1,43 @@
+.App {
+  position: relative;
+}
+
+.orange-background {
+  position: absolute;
+  width: 806px;
+  height: 612px;
+  left: 635px;
+  top: 67px;
+  background: linear-gradient(to bottom, #FDB153 33%, #F8A43D 33%, #F68C0B 33%);
+  z-index: -1; /* Ensure it stays behind other elements */
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feed-container {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .orange-background {
+    display: none; 
+  }
+
+  .feed-container {
+    margin-left: 0;
+  }
+}
