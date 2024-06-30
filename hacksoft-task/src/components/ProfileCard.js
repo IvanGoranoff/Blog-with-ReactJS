@@ -5,12 +5,24 @@ import avatar from '../assets/avatar.png';
 const ProfileCard = () => {
     return (
         <div className="profile-card">
-            <img src={avatar} alt="I" className="avatar" />
-            <h2>Ivan Goranov</h2>
-            <p>Candidate for a front-end developer at HackSoft</p>
-            <div className="stats">
-                <span>210 Likes</span>
-                <span>4 Posts</span>
+            <div className="profile-header">
+                <img src={avatar} alt="I" className="avatar" />
+                <div className="profile-info">
+                    <h2>Ivan Goranov</h2>
+                    <p>Candidate for a front-end developer at HackSoft</p>
+                </div>
+            </div>
+            <div className="profile-divider"></div>
+            <div className="profile-stats">
+                <div className="stat">
+                    <span>210</span>
+                    <p>Likes</p>
+                </div>
+                <div className="stat-divider"></div>
+                <div className="stat">
+                    <span>4</span>
+                    <p>Posts</p>
+                </div>
             </div>
         </div>
     );
