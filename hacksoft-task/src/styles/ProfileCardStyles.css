@@ -7,14 +7,14 @@
   max-width: 300px;
   height: 55%;
 
-  position: relative;  /* За да може иконката да се позиционира абсолютно */
+  position: relative; 
 }
 
 .profile-header {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  position: relative;  /* За да може иконката да се позиционира абсолютно спрямо този контейнер */
+  position: relative; 
 }
 
 .avatar {
