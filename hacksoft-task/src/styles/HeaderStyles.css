@@ -2,13 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffff;
-  width: 100%;
+  padding: 10px 20px;
+  background-color: white;
+  position: sticky; 
   top: 0;
-  transition: all 0.3s ease;
   z-index: 100;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: -1%;
+  margin-top: -1%;
 }
+
 
 .sticky {
   position: fixed;
@@ -21,6 +25,8 @@
 
 .logo {
   height: 40px;
+  z-index: 10;
+
 }
 
 .profile-icon img {
@@ -28,4 +34,6 @@
   width: 40px;
   height: 40px;
   margin-right: 50px;
+  z-index: 10;
+
 }
