@@ -1,16 +1,17 @@
 .App {
   position: relative;
   background-color: #F6F7F9;
+  overflow-x: hidden;
 }
 
 .background-image {
-  position: absolute;
-  top: -40%;
+  position: fixed;
+  top: -20%;
   left: 19%;
   right: -30%;
   bottom: 0;
   background: url(http://localhost:3000/static/media/bgground.62ae4a7d76186e5a14d8.svg) no-repeat center;
-  background-size: 53%;
+  background-size: 50%;
   z-index: 0;
 }
 
@@ -52,4 +53,14 @@
   .background-image {
     background-size: contain;
   }
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffff;
+  color: #555;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }

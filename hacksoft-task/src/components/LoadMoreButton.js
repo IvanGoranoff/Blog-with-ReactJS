@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/LoadMoreButtonStyles.css';
 
-function LoadMoreButton() {
+function LoadMoreButton({ onClick }) {
     return (
-        <button className="load-more">Load more</button>
+        <button className="load-more" onClick={onClick}>Load more</button>
     );
 }
 
