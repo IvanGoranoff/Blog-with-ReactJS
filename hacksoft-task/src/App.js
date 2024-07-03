@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="background-image"></div>
+      <div className="background-image" style={{ backgroundImage: `url(${backgroundSvg})` }}></div>
       <div className="content">
         <ProfileCard />
         <div className="feed-container">

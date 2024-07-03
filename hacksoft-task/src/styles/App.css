@@ -5,12 +5,12 @@
 
 .background-image {
   position: absolute;
-  top: -51%;
+  top: -40%;
   left: 19%;
   right: -30%;
   bottom: 0;
   background: url(http://localhost:3000/static/media/bgground.62ae4a7d76186e5a14d8.svg) no-repeat center;
-  background-size: 50%;
+  background-size: 53%;
   z-index: 0;
 }
 
@@ -21,7 +21,7 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 1; /* Добавяне на z-index за да се гарантира, че съдържанието е над фоновото изображение */
+  z-index: 1; 
 }
 
 .feed-container {
@@ -31,9 +31,10 @@
 
 @media (max-width: 768px) {
   .background-image {
-    background-size: contain; /* Настройка за респонсивност на фоновото изображение */
-    top: -62%;
+    background-size: contain; 
+    top: -40%;
   }
+  
 
   .content {
     flex-direction: column;
@@ -46,19 +47,9 @@
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1010px) {
   .background-image {
-    background-size: contain; /* Настройка за респонсивност на фоновото изображение */
-    top: -62%;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .feed-container {
-    margin-left: 0;
+    background-size: contain;
   }
 }
