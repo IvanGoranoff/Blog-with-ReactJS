@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import '../styles/PostStyles.css';
-import { FaThumbsUp, FaShare } from 'react-icons/fa';
+import { FaThumbsUp, FaHeart, FaLaugh, FaSurprise, FaComment } from 'react-icons/fa';
 import avatar from '../assets/avatar.png';
+import { updatePost } from '../services/api';
 
 function Post({ post }) {
-    const [likes, setLikes] = useState(post.likes);
-    const [showMore, setShowMore] = useState(false);
+    const [reactions, setReactions] = useState(post.reactions || { like: 0, love: 0, laugh: 0, surprise: 0 });
+    const [comments, setComments] = useState(post.comments || []);
+    const [commentText, setCommentText] = useState("");
+    const [showComments, setShowComments] = useState(false);
 
-    const handleLike = () => {
-        setLikes(likes + 1);
+    const handleReaction = async (type) => {
+        const updatedReactions = {
+            ...reactions,
+            [type]: reactions[type] + 1
+        };
+        setReactions(updatedReactions);
+        await updatePost(post.id, { reactions: updatedReactions });
     };
 
-    const handleShowMore = () => {
-        setShowMore(!showMore);
+    const handleComment = async () => {
+        if (commentText.trim()) {
+            const newComment = { text: commentText, user: 'Current User', avatar };
+            const updatedComments = [...comments, newComment];
+            setComments(updatedComments);
+            setCommentText("");
+            await updatePost(post.id, { comments: updatedComments });
+        }
     };
 
     return (
@@ -27,26 +41,49 @@ function Post({ post }) {
                     <span className="time">{post.time}</span>
                 </div>
             </div>
-            <div className={`post-content ${showMore ? 'show' : ''}`}>
-                {showMore ? post.content : `${post.content.substring(0, 100)}...`}
-                {post.content.length > 100 && (
-                    <span className="see-more" onClick={handleShowMore}>
-                        {showMore ? '...see less' : '...see more'}
-                    </span>
-                )}
+            <div className="post-content">
+                {post.content}
             </div>
             <div className="post-footer">
-                <div className="like-share">
-                    <button className="like-button" onClick={handleLike}>
-                        <FaThumbsUp className="icon" />
-                        {likes}
+                <div className="reactions">
+                    <button className="icon-button" onClick={() => handleReaction('like')}>
+                        <FaThumbsUp className="icon" /> {reactions.like}
                     </button>
-                    <button className="share-button">
-                        <FaShare className="icon" />
-                        Share
+                    <button className="icon-button" onClick={() => handleReaction('love')}>
+                        <FaHeart className="icon" /> {reactions.love}
+                    </button>
+                    <button className="icon-button" onClick={() => handleReaction('laugh')}>
+                        <FaLaugh className="icon" /> {reactions.laugh}
+                    </button>
+                    <button className="icon-button" onClick={() => handleReaction('surprise')}>
+                        <FaSurprise className="icon" /> {reactions.surprise}
+                    </button>
+                    <button className="icon-button" onClick={() => setShowComments(!showComments)}>
+                        <FaComment className="icon" /> {comments.length}
                     </button>
                 </div>
             </div>
+            {showComments && (
+                <div className="comments-section">
+                    {comments.map((comment, index) => (
+                        <div key={index} className="comment">
+                            <img src={avatar} alt="Avatar" className="avatar" />
+                            <div className="comment-content">
+                                <span className="comment-user">{comment.user}</span>
+                                <span className="comment-text">{comment.text}</span>
+                            </div>
+                        </div>
+                    ))}
+                    <div className="add-comment">
+                        <textarea
+                            value={commentText}
+                            onChange={(e) => setCommentText(e.target.value)}
+                            placeholder="Add a comment..."
+                        ></textarea>
+                        <button onClick={handleComment}>Comment</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
