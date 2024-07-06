@@ -6,24 +6,25 @@
 
 .background-image {
   position: fixed;
-  top: -5%;
-  left: 19%;
-  right: -35%;
-  bottom: 0;
-  background: url(http://localhost:3000/static/media/bgground.62ae4a7d76186e5a14d8.svg) no-repeat center;
-  background-size: 40%;
-  z-index: 1;
+  top: 0%;
+  left: 53%;
+  width: 100%;
+  height: 66%;
+  z-index: 0;
+  background: url('../assets/bgground.svg') no-repeat;
+  background-size: contain;
+  z-index: 0;
 }
 
 .background-image-bottom-left {
   position: fixed;
-  bottom: 0;
+  bottom: -10%;
   left: 0;
-  background: url(http://localhost:3000/static/media/Group.svg) no-repeat;
-  background-size: 20%;
-  width: 20%;
-  height: 20%;
-  z-index: 1;
+  width: 40%;
+  height: 40%;
+  background: url('../assets/Group.svg') no-repeat;
+  background-size: contain;
+  z-index: 0;
 }
 
 .content {
@@ -33,7 +34,7 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 2; 
+  z-index: 1; 
 }
 
 .feed-container {
@@ -42,15 +43,11 @@
 }
 
 @media (max-width: 768px) {
-  .background-image {
-    background-size: contain; 
-    top: -40%;
-  }
-
+  .background-image,
   .background-image-bottom-left {
-    background-size: contain;
-    width: 40%;
-    height: 40%;
+    background-size: contain; 
+    width: 100%;
+    height: auto;
   }
 
   .content {
@@ -65,7 +62,8 @@
 }
 
 @media (max-width: 1010px) {
-  .background-image {
+  .background-image,
+  .background-image-bottom-left {
     background-size: contain;
   }
 }
