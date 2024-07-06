@@ -1,0 +1,94 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "user": "Daniel Goshev",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Software Developer, HackSoft",
+      "content": "Despite our total project numbers only increasing by 2% compared to last month...",
+      "likes": 4,
+      "time": "20 minutes ago"
+    },
+    {
+      "id": "2",
+      "user": "Daniel Goshev",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Software Developer, HackSoft",
+      "content": "Despite our total project numbers only increasing by 2% compared to last month...",
+      "likes": 4,
+      "time": "3 days ago"
+    },
+    {
+      "id": "3",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "This is a short content.",
+      "likes": 2,
+      "time": "Just now"
+    },
+    {
+      "id": "4",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "This content is a bit longer to show the difference in content length.",
+      "likes": 1,
+      "time": "1 hour ago"
+    },
+    {
+      "id": "5",
+      "user": "Maria Petrova",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Senior Developer at TechCorp",
+      "content": "Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.",
+      "likes": 5,
+      "time": "2 days ago"
+    },
+    {
+      "id": "6",
+      "user": "John Doe",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Junior Developer at StartUp Inc.",
+      "content": "This post has an even longer content than the previous ones. It should demonstrate how the 'see more' button behaves when there is a significant amount of text. The goal is to ensure that the transition is smooth and that the content expands vertically as expected when the user clicks on 'see more'. The content continues to grow in length to make sure we have enough text to test the functionality comprehensively.",
+      "likes": 7,
+      "time": "5 minutes ago"
+    },
+    {
+      "id": "7",
+      "user": "Anna Ivanova",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Product Manager at BigTech",
+      "content": "Short and sweet.",
+      "likes": 3,
+      "time": "30 minutes ago"
+    },
+    {
+      "id": "8",
+      "user": "Georgi Georgiev",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Designer at Creative Agency",
+      "content": "This post is to test the layout with a very small amount of text.",
+      "likes": 0,
+      "time": "1 day ago"
+    },
+    {
+      "id": "9",
+      "user": "Elena Stoyanova",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Marketing Specialist at Advertising Co.",
+      "content": "Another post with medium content length. We need to ensure that all posts, regardless of content length, are displayed correctly and that the 'see more' functionality works as expected.",
+      "likes": 6,
+      "time": "3 hours ago"
+    },
+    {
+      "id": "10",
+      "user": "Peter Ivanov",
+      "avatar": "http://localhost:3000/static/media/avatar.png",
+      "title": "Data Scientist at Data Solutions",
+      "content": "This post has an extremely long content to ensure that the 'see more' button and the expanding functionality are tested thoroughly. The content includes multiple sentences and continues to grow in length to test the smooth transition and vertical expansion when the user interacts with the post. The goal is to achieve a seamless user experience even when dealing with large amounts of text. Therefore, this content is intentionally verbose to cover all edge cases.",
+      "likes": 8,
+      "time": "2 hours ago"
+    }
+  ]
+}

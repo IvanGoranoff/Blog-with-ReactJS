@@ -52,6 +52,10 @@
 
 .post-content {
   margin: 1rem 0;
+  max-height: 100px; /* Initial height */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, height 0.5s ease-out;
+  height: auto;
 }
 
 .see-more {
@@ -94,4 +98,8 @@
 
 .icon-button {
   margin-right: 0.5rem;
+}
+
+.post-content.show {
+  max-height: 1000px; /* Set this to a large enough value */
 }

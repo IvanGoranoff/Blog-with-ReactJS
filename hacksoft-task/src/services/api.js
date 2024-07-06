@@ -1,9 +1,15 @@
 import axios from 'axios';
 
-const api = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com'
-});
+export const fetchPosts = async () => {
+    const response = await fetch('http://localhost:5000/posts');
+    const data = await response.json();
+    return data;
+};
 
-export const fetchPosts = (page = 1) => {
-    return api.get(`/posts?_page=${page}&_limit=10`);
+export const submitPost = async (post) => {
+    await fetch('http://localhost:5000/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(post),
+    });
 };

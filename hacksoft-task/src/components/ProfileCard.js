@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/ProfileCardStyles.css';
-import avatar from '../assets/avatar.png';
 import editIcon from '../assets/edit-icon.png';
+import avatar from '../assets/avatar.png';
 
-const ProfileCard = () => {
+function ProfileCard() {
     return (
         <div className="profile-card">
             <div className="profile-header">
-                <img src={avatar} alt="I" className="avatar" />
+                <img src={avatar} alt="Avatar" className="avatar" />
                 <div className="profile-info">
                     <h2>Ivan Goranov</h2>
                     <p>Candidate for a front-end developer at HackSoft</p>
