@@ -89,6 +89,13 @@
       "content": "This post has an extremely long content to ensure that the 'see more' button and the expanding functionality are tested thoroughly. The content includes multiple sentences and continues to grow in length to test the smooth transition and vertical expansion when the user interacts with the post. The goal is to achieve a seamless user experience even when dealing with large amounts of text. Therefore, this content is intentionally verbose to cover all edge cases.",
       "likes": 8,
       "time": "2 hours ago"
+    },
+    {
+      "id": 11,
+      "content": "hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi ",
+      "user": "Ivan Goranov",
+      "likes": 0,
+      "time": "2024-07-06T17:56:27.510Z"
     }
   ]
 }

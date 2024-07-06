@@ -7,7 +7,7 @@
 .background-image {
   position: fixed;
   top: 0%;
-  left: 53%;
+  left: 65%;
   width: 100%;
   height: 66%;
   z-index: 0;
@@ -62,9 +62,20 @@
 }
 
 @media (max-width: 1010px) {
-  .background-image,
+
   .background-image-bottom-left {
     background-size: contain;
+    bottom: -30%;
+  }
+ 
+
+}
+@media (max-width: 1350px) {
+  .background-image {
+    background-size: contain;
+  }
+  .background-image-bottom-left {
+    bottom: -25%;
   }
 }
 
