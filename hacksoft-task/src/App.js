@@ -4,11 +4,14 @@ import ProfileCard from './components/ProfileCard';
 import Feed from './components/Feed';
 import './styles/App.css';
 import backgroundSvg from './assets/bgground.svg';
+import background2 from './assets/Group.svg';
+
 
 function App() {
   return (
     <div className="App">
       <div className="background-image" style={{ backgroundImage: `url(${backgroundSvg})` }}></div>
+      <div className="background-image-bottom-left" style={{ backgroundImage: `url(${background2})` }}  ></div>
       <Header />
       <div className="content">
         <ProfileCard />

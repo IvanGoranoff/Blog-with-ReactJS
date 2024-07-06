@@ -6,13 +6,24 @@
 
 .background-image {
   position: fixed;
-  top: -20%;
+  top: -5%;
   left: 19%;
-  right: -30%;
+  right: -35%;
   bottom: 0;
   background: url(http://localhost:3000/static/media/bgground.62ae4a7d76186e5a14d8.svg) no-repeat center;
-  background-size: 50%;
-  z-index: 0;
+  background-size: 40%;
+  z-index: 1;
+}
+
+.background-image-bottom-left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: url(http://localhost:3000/static/media/Group.svg) no-repeat;
+  background-size: 20%;
+  width: 20%;
+  height: 20%;
+  z-index: 1;
 }
 
 .content {
@@ -22,7 +33,7 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 1; 
+  z-index: 2; 
 }
 
 .feed-container {
@@ -35,7 +46,12 @@
     background-size: contain; 
     top: -40%;
   }
-  
+
+  .background-image-bottom-left {
+    background-size: contain;
+    width: 40%;
+    height: 40%;
+  }
 
   .content {
     flex-direction: column;
@@ -47,7 +63,6 @@
     margin-left: 0;
   }
 }
-
 
 @media (max-width: 1010px) {
   .background-image {
