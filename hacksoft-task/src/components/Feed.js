@@ -1,35 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import Post from './Post';
+import CreatePost from './CreatePost';
 import '../styles/FeedStyles.css';
 import { getPosts } from '../services/api';
 import LoadMoreButton from './LoadMoreButton';
 
 function Feed() {
     const [posts, setPosts] = useState([]);
-    const [page, setPage] = useState(0);
-    const [loading, setLoading] = useState(false);
+    const [visiblePosts, setVisiblePosts] = useState(5);
 
     useEffect(() => {
         const fetchPosts = async () => {
-            setLoading(true);
-            const data = await getPosts(5, page * 5);
-            setPosts((prevPosts) => [...prevPosts, ...data]);
-            setLoading(false);
+            const data = await getPosts();
+            setPosts(data);
         };
 
         fetchPosts();
-    }, [page]);
+    }, []);
 
     const loadMorePosts = () => {
-        setPage((prevPage) => prevPage + 1);
+        setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + 5);
+    };
+
+    const handlePostCreated = (newPost) => {
+        setPosts([newPost, ...posts]);
     };
 
     return (
         <div className="feed">
-            {posts.map((post) => (
+            <CreatePost onPostCreated={handlePostCreated} />
+            {posts.slice(0, visiblePosts).map((post) => (
                 <Post key={post.id} post={post} />
             ))}
-            <LoadMoreButton onClick={loadMorePosts} loading={loading} />
+            {visiblePosts < posts.length && (
+                <LoadMoreButton onClick={loadMorePosts} />
+            )}
         </div>
     );
 }

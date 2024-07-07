@@ -508,6 +508,38 @@
           "avatar": "http://localhost:3000/assets/avatar.png"
         }
       ]
+    },
+    {
+      "id": "8354",
+      "user": "Current User",
+      "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png",
+      "title": "Software Developer at HackSoft",
+      "content": "асдасдасд",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "0027",
+      "user": "Current User",
+      "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png",
+      "title": "Software Developer at HackSoft",
+      "content": "asdasdasd",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
     }
   ]
 }

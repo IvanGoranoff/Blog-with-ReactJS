@@ -10,6 +10,7 @@ function Post({ post }) {
     const [commentText, setCommentText] = useState("");
     const [showComments, setShowComments] = useState(false);
     const [expandedComments, setExpandedComments] = useState({});
+    const [showMoreContent, setShowMoreContent] = useState(false);
 
     const handleReaction = async (type) => {
         const updatedReactions = {
@@ -35,7 +36,10 @@ function Post({ post }) {
             ...prev,
             [index]: !prev[index],
         }));
-        debugger
+    };
+
+    const toggleContentExpansion = () => {
+        setShowMoreContent(!showMoreContent);
     };
 
     return (
@@ -50,8 +54,13 @@ function Post({ post }) {
                     <span className="time">{post.time}</span>
                 </div>
             </div>
-            <div className="post-content">
-                {post.content}
+            <div className={`post-content ${showMoreContent ? 'show' : ''}`}>
+                {showMoreContent ? post.content : `${post.content.substring(0, 100)}...`}
+                {post.content.length > 100 && (
+                    <span className="see-more" onClick={toggleContentExpansion}>
+                        {showMoreContent ? '...see less' : '...see more'}
+                    </span>
+                )}
             </div>
             <div className="post-footer">
                 <div className="reactions">
@@ -75,25 +84,21 @@ function Post({ post }) {
             {showComments && (
                 <div className="comments-section">
                     {comments.map((comment, index) => (
-                        <div key={post.id} className="comment">
-                            <img src={comment.avatar} alt="Avatar" className="avatar" />
+                        <div key={index} className="comment">
+                            <img src={avatar} alt="Avatar" className="avatar" />
                             <div className="comment-content">
                                 <span className="comment-user">{comment.user}</span>
                                 <span className="comment-text">
-                                    {expandedComments[index] || comment.text.length <= 50
-                                        ? comment.text
-                                        : `${comment.text.substring(0, 50)}...`}
+                                    {expandedComments[index] ? comment.text : `${comment.text.substring(0, 100)}...`}
                                     {comment.text.length > 100 && (
                                         <span className="see-more" onClick={() => toggleCommentExpansion(index)}>
-                                            {expandedComments[index] ? ' see less' : '...see more'}
+                                            {expandedComments[index] ? ' see less' : ' see more'}
                                         </span>
                                     )}
                                 </span>
                             </div>
                         </div>
-                    ))
-                    }
-
+                    ))}
                     <div className="add-comment">
                         <textarea
                             value={commentText}
