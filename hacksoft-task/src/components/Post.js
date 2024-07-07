@@ -35,6 +35,7 @@ function Post({ post }) {
             ...prev,
             [index]: !prev[index],
         }));
+        debugger
     };
 
     return (
@@ -74,14 +75,14 @@ function Post({ post }) {
             {showComments && (
                 <div className="comments-section">
                     {comments.map((comment, index) => (
-                        <div key={index} className="comment">
+                        <div key={post.id} className="comment">
                             <img src={comment.avatar} alt="Avatar" className="avatar" />
                             <div className="comment-content">
                                 <span className="comment-user">{comment.user}</span>
                                 <span className="comment-text">
-                                    {expandedComments[index] || comment.text.length <= 100
+                                    {expandedComments[index] || comment.text.length <= 50
                                         ? comment.text
-                                        : `${comment.text.substring(0, 100)}...`}
+                                        : `${comment.text.substring(0, 50)}...`}
                                     {comment.text.length > 100 && (
                                         <span className="see-more" onClick={() => toggleCommentExpansion(index)}>
                                             {expandedComments[index] ? ' see less' : '...see more'}
@@ -90,7 +91,9 @@ function Post({ post }) {
                                 </span>
                             </div>
                         </div>
-                    ))}
+                    ))
+                    }
+
                     <div className="add-comment">
                         <textarea
                             value={commentText}
