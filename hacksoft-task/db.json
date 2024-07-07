@@ -37,15 +37,30 @@
       "time": "Just now",
       "reactions": {
         "like": 7,
-        "love": 2,
-        "laugh": 1,
-        "surprise": 0
+        "love": 4,
+        "laugh": 2,
+        "surprise": 1
       },
       "comments": [
         {
           "text": "Nice one!",
           "user": "Daniel Goshev",
           "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "COOL",
+          "user": "Current User",
+          "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png"
+        },
+        {
+          "text": "AAAAAAAAAAA",
+          "user": "Current User",
+          "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png"
+        },
+        {
+          "text": "test",
+          "user": "Current User",
+          "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png"
         }
       ]
     },
@@ -54,7 +69,7 @@
       "user": "Maria Petrova",
       "avatar": "http://localhost:3000/assets/avatar.png",
       "title": "Senior Developer at TechCorp",
-      "content": "Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.",
+      "content": "Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.",
       "likes": 5,
       "time": "2 days ago",
       "reactions": {

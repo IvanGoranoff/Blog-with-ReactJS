@@ -9,6 +9,7 @@ function Post({ post }) {
     const [comments, setComments] = useState(post.comments || []);
     const [commentText, setCommentText] = useState("");
     const [showComments, setShowComments] = useState(false);
+    const [expandedComments, setExpandedComments] = useState({});
 
     const handleReaction = async (type) => {
         const updatedReactions = {
@@ -27,6 +28,13 @@ function Post({ post }) {
             setCommentText("");
             await updatePost(post.id, { comments: updatedComments });
         }
+    };
+
+    const toggleCommentExpansion = (index) => {
+        setExpandedComments((prev) => ({
+            ...prev,
+            [index]: !prev[index],
+        }));
     };
 
     return (
@@ -67,10 +75,19 @@ function Post({ post }) {
                 <div className="comments-section">
                     {comments.map((comment, index) => (
                         <div key={index} className="comment">
-                            <img src={avatar} alt="Avatar" className="avatar" />
+                            <img src={comment.avatar} alt="Avatar" className="avatar" />
                             <div className="comment-content">
                                 <span className="comment-user">{comment.user}</span>
-                                <span className="comment-text">{comment.text}</span>
+                                <span className="comment-text">
+                                    {expandedComments[index] || comment.text.length <= 100
+                                        ? comment.text
+                                        : `${comment.text.substring(0, 100)}...`}
+                                    {comment.text.length > 100 && (
+                                        <span className="see-more" onClick={() => toggleCommentExpansion(index)}>
+                                            {expandedComments[index] ? ' see less' : '...see more'}
+                                        </span>
+                                    )}
+                                </span>
                             </div>
                         </div>
                     ))}

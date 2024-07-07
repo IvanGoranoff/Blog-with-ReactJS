@@ -140,3 +140,9 @@
 .add-comment button:hover {
   background-color: #e65c00;
 }
+
+.see-more {
+  color: #ff6600;
+  cursor: pointer;
+  margin-left: 5px;
+}
