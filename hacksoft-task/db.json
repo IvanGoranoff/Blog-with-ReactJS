@@ -50,17 +50,17 @@
         {
           "text": "COOL",
           "user": "Current User",
-          "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png"
+          "avatar": "http://localhost:3000/assets/avatar.png"
         },
         {
           "text": "AAAAAAAAAAA",
           "user": "Current User",
-          "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png"
+          "avatar": "http://localhost:3000/assets/avatar.png"
         },
         {
           "text": "test",
           "user": "Current User",
-          "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png"
+          "avatar": "http://localhost:3000/assets/avatar.png"
         }
       ]
     },
@@ -69,7 +69,7 @@
       "user": "Maria Petrova",
       "avatar": "http://localhost:3000/assets/avatar.png",
       "title": "Senior Developer at TechCorp",
-      "content": "Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application. Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.",
+      "content": "Here is another example of a post with medium-length content to test the layout and behavior of the 'see more' functionality in our application.",
       "likes": 5,
       "time": "2 days ago",
       "reactions": {
@@ -133,6 +133,381 @@
         "surprise": 1
       },
       "comments": []
+    },
+    {
+      "id": "6",
+      "user": "Georgi Georgiev",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Backend Developer at MicroTech",
+      "content": "Our backend services are now 20% faster!",
+      "likes": 6,
+      "time": "1 hour ago",
+      "reactions": {
+        "like": 10,
+        "love": 5,
+        "laugh": 3,
+        "surprise": 1
+      },
+      "comments": [
+        {
+          "text": "Good job!",
+          "user": "Daniel Goshev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Impressive!",
+          "user": "Maria Petrova",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "user": "Anna Ivanova",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Product Manager at BigTech",
+      "content": "Excited about our new product launch next week.",
+      "likes": 8,
+      "time": "1 day ago",
+      "reactions": {
+        "like": 14,
+        "love": 9,
+        "laugh": 2,
+        "surprise": 3
+      },
+      "comments": [
+        {
+          "text": "Can't wait!",
+          "user": "John Doe",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "user": "John Doe",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Junior Developer at StartUp Inc.",
+      "content": "Learning a lot in my new role!",
+      "likes": 9,
+      "time": "2 hours ago",
+      "reactions": {
+        "like": 13,
+        "love": 7,
+        "laugh": 4,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "That's great to hear!",
+          "user": "Anna Ivanova",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "user": "Maria Petrova",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Senior Developer at TechCorp",
+      "content": "We just released a major update to our application!",
+      "likes": 12,
+      "time": "3 days ago",
+      "reactions": {
+        "like": 20,
+        "love": 12,
+        "laugh": 5,
+        "surprise": 3
+      },
+      "comments": [
+        {
+          "text": "Awesome update!",
+          "user": "Georgi Georgiev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Love the new features!",
+          "user": "Daniel Goshev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "user": "Daniel Goshev",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Software Developer, HackSoft",
+      "content": "Our team is growing rapidly!",
+      "likes": 10,
+      "time": "4 hours ago",
+      "reactions": {
+        "like": 18,
+        "love": 11,
+        "laugh": 6,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "Welcome to the new members!",
+          "user": "Maria Petrova",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Great news!",
+          "user": "Ivan Goranov",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "Just finished a major project!",
+      "likes": 4,
+      "time": "10 minutes ago",
+      "reactions": {
+        "like": 12,
+        "love": 7,
+        "laugh": 3,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "Good work!",
+          "user": "Daniel Goshev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Congratulations!",
+          "user": "John Doe",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "user": "Maria Petrova",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Senior Developer at TechCorp",
+      "content": "Working on some exciting new features.",
+      "likes": 6,
+      "time": "6 hours ago",
+      "reactions": {
+        "like": 15,
+        "love": 8,
+        "laugh": 4,
+        "surprise": 3
+      },
+      "comments": [
+        {
+          "text": "Can't wait to see them!",
+          "user": "Ivan Goranov",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "user": "John Doe",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Junior Developer at StartUp Inc.",
+      "content": "Happy with my progress so far.",
+      "likes": 5,
+      "time": "1 day ago",
+      "reactions": {
+        "like": 10,
+        "love": 6,
+        "laugh": 3,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "Keep it up!",
+          "user": "Maria Petrova",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "user": "Georgi Georgiev",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Backend Developer at MicroTech",
+      "content": "Looking forward to our next sprint.",
+      "likes": 7,
+      "time": "3 hours ago",
+      "reactions": {
+        "like": 11,
+        "love": 5,
+        "laugh": 3,
+        "surprise": 1
+      },
+      "comments": [
+        {
+          "text": "Let's do this!",
+          "user": "Ivan Goranov",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Go team!",
+          "user": "Daniel Goshev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "user": "Anna Ivanova",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Product Manager at BigTech",
+      "content": "Wrapping up the quarter with strong results.",
+      "likes": 8,
+      "time": "1 week ago",
+      "reactions": {
+        "like": 14,
+        "love": 9,
+        "laugh": 4,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "Fantastic work!",
+          "user": "John Doe",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Great effort by the team!",
+          "user": "Georgi Georgiev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "user": "Daniel Goshev",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Software Developer, HackSoft",
+      "content": "Our team is growing rapidly!",
+      "likes": 10,
+      "time": "4 hours ago",
+      "reactions": {
+        "like": 18,
+        "love": 11,
+        "laugh": 6,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "Welcome to the new members!",
+          "user": "Maria Petrova",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Great news!",
+          "user": "Ivan Goranov",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "Just finished a major project!",
+      "likes": 4,
+      "time": "10 minutes ago",
+      "reactions": {
+        "like": 12,
+        "love": 7,
+        "laugh": 3,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "Good work!",
+          "user": "Daniel Goshev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Congratulations!",
+          "user": "John Doe",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "user": "Maria Petrova",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Senior Developer at TechCorp",
+      "content": "Working on some exciting new features.",
+      "likes": 6,
+      "time": "6 hours ago",
+      "reactions": {
+        "like": 15,
+        "love": 8,
+        "laugh": 4,
+        "surprise": 3
+      },
+      "comments": [
+        {
+          "text": "Can't wait to see them!",
+          "user": "Ivan Goranov",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "user": "John Doe",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Junior Developer at StartUp Inc.",
+      "content": "Happy with my progress so far.",
+      "likes": 5,
+      "time": "1 day ago",
+      "reactions": {
+        "like": 10,
+        "love": 6,
+        "laugh": 3,
+        "surprise": 2
+      },
+      "comments": [
+        {
+          "text": "Keep it up!",
+          "user": "Maria Petrova",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "user": "Georgi Georgiev",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Backend Developer at MicroTech",
+      "content": "Looking forward to our next sprint.",
+      "likes": 7,
+      "time": "3 hours ago",
+      "reactions": {
+        "like": 11,
+        "love": 5,
+        "laugh": 3,
+        "surprise": 1
+      },
+      "comments": [
+        {
+          "text": "Let's do this!",
+          "user": "Ivan Goranov",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        },
+        {
+          "text": "Go team!",
+          "user": "Daniel Goshev",
+          "avatar": "http://localhost:3000/assets/avatar.png"
+        }
+      ]
     }
   ]
 }
