@@ -16,37 +16,38 @@ function Post({ post }) {
     const [showComments, setShowComments] = useState(false);
     const [expandedComments, setExpandedComments] = useState({});
     const [showMoreContent, setShowMoreContent] = useState(false);
-    const [userReaction, setUserReaction] = useState(post.userReactions?.[user.name] || null);
+    const [userReaction, setUserReaction] = useState(post.userReactions ? post.userReactions[user.name] : null);
 
     const handleReaction = async (reaction) => {
-        const currentReaction = post.userReactions?.[user.name];
+        const userReaction = post.userReactions ? post.userReactions[user.name] : null;
 
-        let updatedReactions = { ...reactions };
+        let updatedReactions = { ...post.reactions };
         let updatedUserReactions = { ...post.userReactions };
 
-        if (currentReaction) {
-            updatedReactions[currentReaction]--;
-        }
-
-        if (currentReaction === reaction) {
+        if (userReaction === reaction) {
+            // Remove reaction
+            updatedReactions[reaction] = post.reactions[reaction] - 1;
             delete updatedUserReactions[user.name];
-            setUserReaction(null);
         } else {
-            updatedReactions[reaction]++;
+            // Add or change reaction
+            updatedReactions[reaction] = (post.reactions[reaction] || 0) + 1;
+            if (userReaction) {
+                updatedReactions[userReaction] = post.reactions[userReaction] - 1;
+            }
             updatedUserReactions[user.name] = reaction;
-            setUserReaction(reaction);
         }
 
-        setReactions(updatedReactions);
         await updatePost(post.id, { reactions: updatedReactions, userReactions: updatedUserReactions });
 
+        setReactions(updatedReactions);
+        setUserReaction(reaction);
         const updatedPosts = posts.map(p => p.id === post.id ? { ...p, reactions: updatedReactions, userReactions: updatedUserReactions } : p);
         setPosts(updatedPosts);
     };
 
     const handleComment = async () => {
         if (commentText.trim()) {
-            const newComment = { text: commentText, user: user.name, avatar: user.avatar };
+            const newComment = { text: commentText, user: user.name, avatar: avatar };
             const updatedComments = [...comments, newComment];
             setComments(updatedComments);
             setCommentText("");
@@ -72,7 +73,7 @@ function Post({ post }) {
     return (
         <div className="post">
             <div className="post-header">
-                <img src={avatar || avatar} alt="Avatar" className="avatar" />
+                <img src={avatar} alt="Avatar" className="avatar" />
                 <div className="post-info">
                     <div className="post-user">
                         <span className="name">{post.user}</span>
@@ -124,7 +125,7 @@ function Post({ post }) {
                 <div className="comments-section">
                     {comments.map((comment, index) => (
                         <div key={index} className="comment">
-                            <img src={avatar || avatar} alt="Avatar" className="avatar" />
+                            <img src={avatar} alt="Avatar" className="avatar" />
                             <div className="comment-content">
                                 <span className="comment-user">{comment.user}</span>
                                 <span className="comment-text">

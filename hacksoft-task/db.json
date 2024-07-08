@@ -50,21 +50,6 @@
           "text": "Nice one!",
           "user": "Daniel Goshev",
           "avatar": "http://localhost:5000/assets/avatar.png"
-        },
-        {
-          "text": "COOL",
-          "user": "Current User",
-          "avatar": "http://localhost:5000/assets/avatar.png"
-        },
-        {
-          "text": "AAAAAAAAAAA",
-          "user": "Current User",
-          "avatar": "http://localhost:5000/assets/avatar.png"
-        },
-        {
-          "text": "test",
-          "user": "Current User",
-          "avatar": "http://localhost:5000/assets/avatar.png"
         }
       ],
       "userReactions": {
@@ -518,247 +503,6 @@
       ]
     },
     {
-      "id": "8354",
-      "user": "Current User",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "асдасдасд",
-      "likes": 0,
-      "time": "2024-07-08T14:41:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "0027",
-      "user": "Current User",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "asdasdasd",
-      "likes": 0,
-      "time": "2024-07-08T14:42:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "be07",
-      "user": "Current User",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "асдасдасд",
-      "likes": 0,
-      "time": "2024-07-08T14:43:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "2bf6",
-      "user": "Current User",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "асдасдасдас",
-      "likes": 0,
-      "time": "2024-07-08T14:44:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "428e",
-      "user": "Ivan Goranov",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "asdassss",
-      "likes": 0,
-      "time": "2024-07-08T14:45:00Z",
-      "reactions": {
-        "like": 1,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": [],
-      "userReaction": "like"
-    },
-    {
-      "id": "3885",
-      "user": "Ivan Goranov",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "proba proba bachka li",
-      "likes": 0,
-      "time": "2024-07-08T14:46:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "6d83",
-      "user": "Ivan Goranov",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "raboti li",
-      "likes": 0,
-      "time": "2024-07-08T14:47:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "dcbb",
-      "user": "Ivan Goranov",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Software Developer at HackSoft",
-      "content": "raboti",
-      "likes": 0,
-      "time": "2024-07-08T14:48:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "7bd8",
-      "user": "Ivan Goranoff",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Candidate for a front-end developer at HackSoft",
-      "content": "проба проба 123",
-      "likes": 0,
-      "time": "2024-07-08T14:49:00Z",
-      "reactions": {
-        "like": 3,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "084a",
-      "user": "Ivan Goranov",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Candidate for a front-end developer at HackSoft",
-      "content": "ааааааааа",
-      "likes": 0,
-      "time": "2024-07-08T14:50:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "a5cb",
-      "user": "Ivan Goranoff",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Candidate for a front-end developer at HackSoft",
-      "content": "asdadas",
-      "likes": 0,
-      "time": "2024-07-08T14:51:00Z",
-      "reactions": {
-        "like": 3,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "27ed",
-      "user": "Ivan Goranoff",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Candidate for a front-end developer at HackSoft",
-      "content": "asdadas",
-      "likes": 0,
-      "time": "2024-07-08T14:52:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "a4a5",
-      "user": "Ivan Goranoff",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Candidate for a front-end developer at HackSoft",
-      "content": "aaaaaaaa",
-      "likes": 0,
-      "time": "2024-07-08T14:53:00Z",
-      "reactions": {
-        "like": 3,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "446a",
-      "user": "Ivan Goranoff",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Candidate for a front-end developer at HackSoft",
-      "content": "asdasdas",
-      "likes": 0,
-      "time": "2024-07-08T14:54:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
-      "id": "93e9",
-      "user": "Ivan Goranoff",
-      "avatar": "http://localhost:5000/assets/avatar.png",
-      "title": "Candidate for a front-end developer at HackSoft",
-      "content": "асдддд",
-      "likes": 0,
-      "time": "2024-07-08T14:55:00Z",
-      "reactions": {
-        "like": 0,
-        "love": 0,
-        "laugh": 0,
-        "surprise": 0
-      },
-      "comments": []
-    },
-    {
       "id": "1a7b",
       "user": "Ivan Goranov",
       "avatar": "http://localhost:3000/assets/avatar.png",
@@ -817,6 +561,165 @@
       },
       "comments": [],
       "time": "2024-07-08T12:30:30.593Z"
+    },
+    {
+      "id": "576c",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "сссссссс",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T12:37:24.144Z"
+    },
+    {
+      "id": "fc76",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "ссссссс",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T12:43:38.069Z"
+    },
+    {
+      "id": "b66d",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "ссссссссс",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T12:43:40.526Z"
+    },
+    {
+      "id": "0299",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "дддддддддд",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T12:43:43.642Z"
+    },
+    {
+      "id": "a21b",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "eweeee",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T13:50:53.803Z"
+    },
+    {
+      "id": "3a2b",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "eeeeeeeeeee",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T13:59:40.547Z"
+    },
+    {
+      "id": "57ff",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "qwerty",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T13:59:50.077Z"
+    },
+    {
+      "id": "ae40",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "test123123",
+      "reactions": {
+        "like": 1,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T14:03:04.619Z",
+      "userReactions": {
+        "Ivan Goranov": "like"
+      }
+    },
+    {
+      "id": "09b1",
+      "user": "Ivan Goranov",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "testov test",
+      "reactions": {
+        "like": 1,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T14:03:24.694Z",
+      "userReactions": {
+        "Ivan Goranov": "like"
+      }
+    },
+    {
+      "id": "dad3",
+      "user": "Ivan Goranoff",
+      "avatar": "http://localhost:3000/assets/avatar.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "test na testa",
+      "reactions": {
+        "like": 1,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": [],
+      "time": "2024-07-08T14:03:35.926Z",
+      "userReactions": {
+        "Ivan Goranoff": "like"
+      }
     }
   ]
 }
