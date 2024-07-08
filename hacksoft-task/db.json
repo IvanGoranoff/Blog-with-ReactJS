@@ -9,8 +9,8 @@
       "likes": 4,
       "time": "20 minutes ago",
       "reactions": {
-        "like": 24,
-        "love": 5,
+        "like": 25,
+        "love": 6,
         "laugh": 3,
         "surprise": 2
       },
@@ -36,9 +36,9 @@
       "likes": 2,
       "time": "Just now",
       "reactions": {
-        "like": 21,
-        "love": 6,
-        "laugh": 2,
+        "like": 25,
+        "love": 8,
+        "laugh": 3,
         "surprise": 1
       },
       "comments": [
@@ -581,6 +581,102 @@
       "content": "asdassss",
       "likes": 0,
       "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "3885",
+      "user": "Ivan Goranov",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Software Developer at HackSoft",
+      "content": "proba proba bachka li",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "6d83",
+      "user": "Ivan Goranov",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Software Developer at HackSoft",
+      "content": "raboti li",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "dcbb",
+      "user": "Ivan Goranov",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Software Developer at HackSoft",
+      "content": "raboti",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "7bd8",
+      "user": "Ivan Goranoff",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "проба проба 123",
+      "likes": 0,
+      "time": "08/07/2024, 03:41:05",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "084a",
+      "user": "Ivan Goranov",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "ааааааааа",
+      "likes": 0,
+      "time": "08/07/2024, 03:44:11",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "a5cb",
+      "user": "Ivan Goranoff",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "asdadas",
+      "likes": 0,
+      "time": "08/07/2024, 03:44:30",
       "reactions": {
         "like": 0,
         "love": 0,

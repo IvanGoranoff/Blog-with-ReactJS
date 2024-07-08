@@ -1,26 +1,24 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { getPosts } from '../services/api';
+import React, { createContext, useState } from 'react';
 
 export const PostContext = createContext();
 
 export const PostProvider = ({ children }) => {
     const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await getPosts();
-            setPosts(data);
-        };
+    const updatePosts = (newPosts) => {
+        setPosts(newPosts);
+    };
 
-        fetchData();
-    }, []);
+    const addPost = (post) => {
+        setPosts([post, ...posts]);
+    };
 
-    const updatePosts = (updatedPosts) => {
-        setPosts(updatedPosts);
+    const updatePostReactions = (postId, newReactions) => {
+        setPosts(posts.map(post => post.id === postId ? { ...post, reactions: newReactions } : post));
     };
 
     return (
-        <PostContext.Provider value={{ posts, updatePosts }}>
+        <PostContext.Provider value={{ posts, updatePosts, addPost, updatePostReactions }}>
             {children}
         </PostContext.Provider>
     );

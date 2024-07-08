@@ -4,9 +4,11 @@ import { FaThumbsUp, FaHeart, FaLaugh, FaSurprise, FaComment } from 'react-icons
 import avatar from '../assets/avatar.png';
 import { updatePost } from '../services/api';
 import { PostContext } from '../context/PostContext';
+import { UserContext } from '../context/UserContext';
 
 function Post({ post }) {
-    const { posts, updatePosts } = useContext(PostContext);
+    const { posts, updatePosts, updatePostReactions } = useContext(PostContext);
+    const { user } = useContext(UserContext);
     const [reactions, setReactions] = useState(post.reactions || { like: 0, love: 0, laugh: 0, surprise: 0 });
     const [comments, setComments] = useState(post.comments || []);
     const [commentText, setCommentText] = useState("");
@@ -23,13 +25,12 @@ function Post({ post }) {
         const updatedPost = { ...post, reactions: updatedReactions };
         await updatePost(post.id, { reactions: updatedReactions });
 
-        const updatedPosts = posts.map(p => p.id === post.id ? updatedPost : p);
-        updatePosts(updatedPosts);
+        updatePostReactions(post.id, updatedReactions);
     };
 
     const handleComment = async () => {
         if (commentText.trim()) {
-            const newComment = { text: commentText, user: 'Current User', avatar };
+            const newComment = { text: commentText, user: user.name, avatar };
             const updatedComments = [...comments, newComment];
             setComments(updatedComments);
             setCommentText("");

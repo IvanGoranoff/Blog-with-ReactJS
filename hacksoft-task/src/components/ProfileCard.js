@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import '../styles/ProfileCardStyles.css';
 import editIcon from '../assets/edit-icon.png';
 import avatar from '../assets/avatar.png';
-import { getPosts } from '../services/api';
 import EditProfileModal from './EditProfileModal';
+import { UserContext } from '../context/UserContext';
+import { PostContext } from '../context/PostContext';
 
 function ProfileCard() {
-    const [likes, setLikes] = useState(0);
+    const { user, updateUser } = useContext(UserContext);
+    const { posts } = useContext(PostContext);
+    const [reactions, setReactions] = useState(0);
     const [postsCount, setPostsCount] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [name, setName] = useState('Ivan Goranov');
-    const [title, setTitle] = useState('Candidate for a front-end developer at HackSoft');
 
     useEffect(() => {
-        const fetchData = async () => {
-            const posts = await getPosts();
-            const userPosts = posts.filter(post => post.user === name);
+        const calculateStats = () => {
+            const userPosts = posts.filter(post => post.user === user.name);
             const reactionsCount = userPosts.reduce((total, post) => {
                 return total + Object.values(post.reactions || {}).reduce((sum, count) => sum + count, 0);
             }, 0);
 
             setPostsCount(userPosts.length);
-            setLikes(reactionsCount);
+            setReactions(reactionsCount);
         };
 
-        fetchData();
-    }, [name]);
+        calculateStats();
+    }, [posts, user]);
 
     const handleEditClick = () => {
         setIsModalOpen(true);
@@ -36,8 +36,7 @@ function ProfileCard() {
     };
 
     const handleSaveProfile = (newName, newTitle) => {
-        setName(newName);
-        setTitle(newTitle);
+        updateUser(newName, newTitle);
     };
 
     return (
@@ -45,15 +44,15 @@ function ProfileCard() {
             <div className="profile-header">
                 <img src={avatar} alt="Avatar" className="avatar" />
                 <div className="profile-info">
-                    <h2>{name}</h2>
-                    <p>{title}</p>
+                    <h2>{user.name}</h2>
+                    <p>{user.title}</p>
                 </div>
                 <img src={editIcon} alt="Edit" className="edit-icon" onClick={handleEditClick} />
             </div>
             <div className="profile-divider"></div>
             <div className="profile-stats">
                 <div className="stat">
-                    <span>{likes}</span>
+                    <span>{reactions}</span>
                     <p>Reactions</p>
                 </div>
                 <div className="stat-divider"></div>
@@ -65,8 +64,8 @@ function ProfileCard() {
             <EditProfileModal
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
-                currentName={name}
-                currentTitle={title}
+                currentName={user.name}
+                currentTitle={user.title}
                 onSave={handleSaveProfile}
             />
         </div>

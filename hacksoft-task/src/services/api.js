@@ -1,27 +1,27 @@
-const API_URL = 'http://localhost:5000/posts';
+const apiUrl = 'http://localhost:5000/posts';
 
 export const getPosts = async () => {
-    const response = await fetch(API_URL);
+    const response = await fetch(apiUrl);
     const data = await response.json();
     return data;
 };
 
-export const updatePost = async (id, updatedPost) => {
-    await fetch(`${API_URL}/${id}`, {
+export const updatePost = async (id, updates) => {
+    await fetch(`${apiUrl}/${id}`, {
         method: 'PATCH',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(updatedPost)
+        body: JSON.stringify(updates),
     });
 };
 
-export const createPost = async (newPost) => {
-    await fetch(API_URL, {
+export const addPost = async (post) => {
+    await fetch(apiUrl, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(newPost)
+        body: JSON.stringify(post),
     });
 };

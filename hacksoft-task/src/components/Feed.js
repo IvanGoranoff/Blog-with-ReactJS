@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Post from './Post';
 import CreatePost from './CreatePost';
+import LoadMoreButton from './LoadMoreButton';
 import '../styles/FeedStyles.css';
 import { getPosts } from '../services/api';
-import LoadMoreButton from './LoadMoreButton';
 
 function Feed() {
     const [posts, setPosts] = useState([]);
@@ -18,22 +18,22 @@ function Feed() {
         fetchPosts();
     }, []);
 
-    const loadMorePosts = () => {
-        setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + 5);
+    const handlePostAdded = (newPost) => {
+        setPosts([newPost, ...posts]);
     };
 
-    const handlePostCreated = (newPost) => {
-        setPosts([newPost, ...posts]);
+    const handleLoadMore = () => {
+        setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + 5);
     };
 
     return (
         <div className="feed">
-            <CreatePost onPostCreated={handlePostCreated} />
+            <CreatePost onPostAdded={handlePostAdded} />
             {posts.slice(0, visiblePosts).map((post) => (
                 <Post key={post.id} post={post} />
             ))}
             {visiblePosts < posts.length && (
-                <LoadMoreButton onClick={loadMorePosts} />
+                <LoadMoreButton onLoadMore={handleLoadMore} />
             )}
         </div>
     );

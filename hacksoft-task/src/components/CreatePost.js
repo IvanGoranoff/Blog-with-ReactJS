@@ -1,26 +1,28 @@
-import React, { useState } from 'react';
-import { createPost } from '../services/api';
+import React, { useState, useContext } from 'react';
 import '../styles/CreatePostStyles.css';
+import { addPost } from '../services/api';
+import { UserContext } from '../context/UserContext';
 import avatar from '../assets/avatar.png';
 
-function CreatePost({ onPostCreated }) {
+function CreatePost({ onPostAdded }) {
     const [content, setContent] = useState('');
+    const { user } = useContext(UserContext);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (content.trim()) {
             const newPost = {
-                user: 'Ivan Goranov',
-                avatar,
-                title: 'Software Developer at HackSoft',
-                content,
+                user: user.name,
+                avatar: avatar,
+                title: user.title,
+                content: content.trim(),
                 likes: 0,
-                time: 'Just now',
+                time: new Date().toLocaleString(),
                 reactions: { like: 0, love: 0, laugh: 0, surprise: 0 },
                 comments: []
             };
-            await createPost(newPost);
-            onPostCreated(newPost);
+            await addPost(newPost);
+            onPostAdded(newPost);
             setContent('');
         }
     };
