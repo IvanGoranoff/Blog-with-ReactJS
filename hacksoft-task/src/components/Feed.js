@@ -33,7 +33,7 @@ function Feed() {
                 <Post key={post.id} post={post} />
             ))}
             {visiblePosts < posts.length && (
-                <LoadMoreButton onLoadMore={handleLoadMore} />
+                <LoadMoreButton onClick={handleLoadMore} />
             )}
         </div>
     );

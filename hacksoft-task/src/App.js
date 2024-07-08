@@ -7,6 +7,7 @@ import backgroundSvg from './assets/bgground.svg';
 import background2 from './assets/Group.svg';
 import { PostProvider } from './context/PostContext';
 import { UserProvider } from './context/UserContext';
+
 function App() {
     return (
         <UserProvider>

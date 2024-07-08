@@ -1,10 +1,17 @@
 const apiUrl = 'http://localhost:5000/posts';
 
 export const getPosts = async () => {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    return data;
+    try {
+        const response = await fetch('http://localhost:5000/posts');
+        const data = await response.json();
+        console.log('getPosts data:', data);
+        return data;
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        return [];
+    }
 };
+
 
 export const updatePost = async (id, updates) => {
     await fetch(`${apiUrl}/${id}`, {

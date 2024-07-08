@@ -9,8 +9,8 @@
       "likes": 4,
       "time": "20 minutes ago",
       "reactions": {
-        "like": 25,
-        "love": 6,
+        "like": 27,
+        "love": 7,
         "laugh": 3,
         "surprise": 2
       },
@@ -36,7 +36,7 @@
       "likes": 2,
       "time": "Just now",
       "reactions": {
-        "like": 25,
+        "like": 29,
         "love": 8,
         "laugh": 3,
         "surprise": 1
@@ -646,7 +646,7 @@
       "likes": 0,
       "time": "08/07/2024, 03:41:05",
       "reactions": {
-        "like": 0,
+        "like": 3,
         "love": 0,
         "laugh": 0,
         "surprise": 0
@@ -677,6 +677,54 @@
       "content": "asdadas",
       "likes": 0,
       "time": "08/07/2024, 03:44:30",
+      "reactions": {
+        "like": 3,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "27ed",
+      "user": "Ivan Goranoff",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "asdadas",
+      "likes": 0,
+      "time": "08/07/2024, 03:50:38",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "a4a5",
+      "user": "Ivan Goranoff",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "aaaaaaaa",
+      "likes": 0,
+      "time": "08/07/2024, 04:02:14",
+      "reactions": {
+        "like": 3,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "446a",
+      "user": "Ivan Goranoff",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "asdasdas",
+      "likes": 0,
+      "time": "08/07/2024, 04:04:34",
       "reactions": {
         "like": 0,
         "love": 0,
