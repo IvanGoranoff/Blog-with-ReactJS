@@ -7,48 +7,28 @@ import { PostContext } from '../context/PostContext';
 import { UserContext } from '../context/UserContext';
 
 function Post({ post }) {
-    const { posts, updatePosts } = useContext(PostContext);
+    const { posts, setPosts } = useContext(PostContext);
     const { user } = useContext(UserContext);
     const [reactions, setReactions] = useState(post.reactions || { like: 0, love: 0, laugh: 0, surprise: 0 });
     const [comments, setComments] = useState(post.comments || []);
-    const [commentText, setCommentText] = useState('');
+    const [commentText, setCommentText] = useState("");
     const [showComments, setShowComments] = useState(false);
     const [expandedComments, setExpandedComments] = useState({});
     const [showMoreContent, setShowMoreContent] = useState(false);
-    const [userReaction, setUserReaction] = useState(post.userReactions?.[user.name] || null);
+    const [selectedReaction, setSelectedReaction] = useState(null);
 
     const handleReaction = async (type) => {
-        let updatedReactions = { ...reactions };
-        let newUserReaction = userReaction;
-
-        if (userReaction) {
-            // Remove the previous reaction
-            updatedReactions[userReaction] = updatedReactions[userReaction] - 1;
-        }
-
-        if (userReaction !== type) {
-            // Add the new reaction
-            updatedReactions[type] = (updatedReactions[type] || 0) + 1;
-            newUserReaction = type;
-        } else {
-            // If the same reaction is clicked, remove it
-            newUserReaction = null;
-        }
-
-        setReactions(updatedReactions);
-        setUserReaction(newUserReaction);
-
-        const updatedPost = {
-            ...post,
-            reactions: updatedReactions,
-            userReactions: {
-                ...post.userReactions,
-                [user.name]: newUserReaction
-            }
+        const updatedReactions = {
+            ...reactions,
+            [type]: reactions[type] + 1
         };
-        await updatePost(post.id, { reactions: updatedReactions, userReactions: updatedPost.userReactions });
+        setReactions(updatedReactions);
+        setSelectedReaction(type);
+        const updatedPost = { ...post, reactions: updatedReactions };
+        await updatePost(post.id, { reactions: updatedReactions });
 
-        updatePosts(updatedPost);
+        const updatedPosts = posts.map(p => p.id === post.id ? updatedPost : p);
+        setPosts(updatedPosts);
     };
 
     const handleComment = async () => {
@@ -56,12 +36,12 @@ function Post({ post }) {
             const newComment = { text: commentText, user: user.name, avatar };
             const updatedComments = [...comments, newComment];
             setComments(updatedComments);
-            setCommentText('');
-
+            setCommentText("");
             const updatedPost = { ...post, comments: updatedComments };
             await updatePost(post.id, { comments: updatedComments });
 
-            updatePosts(updatedPost);
+            const updatedPosts = posts.map(p => p.id === post.id ? updatedPost : p);
+            setPosts(updatedPosts);
         }
     };
 
@@ -98,24 +78,16 @@ function Post({ post }) {
             </div>
             <div className="post-footer">
                 <div className="reactions">
-                    <button
-                        className={`icon-button ${userReaction === 'like' ? 'reacted' : ''}`}
-                        onClick={() => handleReaction('like')}>
+                    <button className="icon-button" onClick={() => handleReaction('like')}>
                         <FaThumbsUp className="icon" /> {reactions.like}
                     </button>
-                    <button
-                        className={`icon-button ${userReaction === 'love' ? 'reacted' : ''}`}
-                        onClick={() => handleReaction('love')}>
+                    <button className="icon-button" onClick={() => handleReaction('love')}>
                         <FaHeart className="icon" /> {reactions.love}
                     </button>
-                    <button
-                        className={`icon-button ${userReaction === 'laugh' ? 'reacted' : ''}`}
-                        onClick={() => handleReaction('laugh')}>
+                    <button className="icon-button" onClick={() => handleReaction('laugh')}>
                         <FaLaugh className="icon" /> {reactions.laugh}
                     </button>
-                    <button
-                        className={`icon-button ${userReaction === 'surprise' ? 'reacted' : ''}`}
-                        onClick={() => handleReaction('surprise')}>
+                    <button className="icon-button" onClick={() => handleReaction('surprise')}>
                         <FaSurprise className="icon" /> {reactions.surprise}
                     </button>
                     <button className="icon-button" onClick={() => setShowComments(!showComments)}>

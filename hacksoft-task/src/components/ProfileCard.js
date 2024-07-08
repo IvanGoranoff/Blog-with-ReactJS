@@ -14,16 +14,17 @@ function ProfileCard() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        console.log('Calculating stats: ', posts);
-        const userPosts = posts.filter((post) => post.user === user.name);
-        const reactionsCount = userPosts.reduce(
-            (total, post) =>
-                total + Object.values(post.reactions || {}).reduce((sum, count) => sum + count, 0),
-            0
-        );
+        const calculateStats = () => {
+            const userPosts = posts.filter(post => post.user === user.name);
+            const reactionsCount = userPosts.reduce((total, post) => {
+                return total + Object.values(post.reactions || {}).reduce((sum, count) => sum + count, 0);
+            }, 0);
 
-        setPostsCount(userPosts.length);
-        setReactions(reactionsCount);
+            setPostsCount(userPosts.length);
+            setReactions(reactionsCount);
+        };
+
+        calculateStats();
     }, [posts, user]);
 
     const handleEditClick = () => {

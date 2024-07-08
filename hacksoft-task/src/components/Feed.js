@@ -1,34 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Post from './Post';
-import CreatePost from './CreatePost';
-import LoadMoreButton from './LoadMoreButton';
 import '../styles/FeedStyles.css';
-import { getPosts } from '../services/api';
+import { getPosts, addPost } from '../services/api';
+import { PostContext } from '../context/PostContext';
+import { UserContext } from '../context/UserContext';
+import LoadMoreButton from './LoadMoreButton';
+import CreatePost from './CreatePost';
 
 function Feed() {
-    const [posts, setPosts] = useState([]);
+    const { posts, setPosts } = useContext(PostContext);
+    const { user } = useContext(UserContext);
     const [visiblePosts, setVisiblePosts] = useState(5);
 
     useEffect(() => {
         const fetchPosts = async () => {
             const data = await getPosts();
             setPosts(data);
+            console.log('Fetched posts:', data);
         };
 
         fetchPosts();
-    }, []);
-
-    const handlePostAdded = (newPost) => {
-        setPosts([newPost, ...posts]);
-    };
+    }, [setPosts]);
 
     const handleLoadMore = () => {
-        setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + 5);
+        setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 5);
+    };
+
+    const handleAddPost = async (content) => {
+        const newPost = {
+            user: user.name,
+            avatar: user.avatar || 'http://localhost:3000/assets/avatar.png',
+            title: user.title,
+            content,
+            reactions: { like: 0, love: 0, laugh: 0, surprise: 0 },
+            comments: [],
+            time: new Date().toLocaleString()
+        };
+        await addPost(newPost);
+        const updatedPosts = await getPosts();
+        setPosts(updatedPosts);
     };
 
     return (
         <div className="feed">
-            <CreatePost onPostAdded={handlePostAdded} />
+            <CreatePost onAddPost={handleAddPost} />
             {posts.slice(0, visiblePosts).map((post) => (
                 <Post key={post.id} post={post} />
             ))}

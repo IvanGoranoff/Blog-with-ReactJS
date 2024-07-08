@@ -3,10 +3,8 @@ const apiUrl = 'http://localhost:5000/posts';
 export const getPosts = async () => {
     try {
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
         const data = await response.json();
+        console.log('getPosts data:', data);
         return data;
     } catch (error) {
         console.error('Error fetching posts:', error);
@@ -23,11 +21,12 @@ export const updatePost = async (id, updates) => {
             },
             body: JSON.stringify(updates),
         });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const data = await response.json();
+        console.log('updatePost data:', data);
+        return data;
     } catch (error) {
         console.error('Error updating post:', error);
+        throw error;
     }
 };
 
@@ -40,10 +39,11 @@ export const addPost = async (post) => {
             },
             body: JSON.stringify(post),
         });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const data = await response.json();
+        console.log('addPost data:', data);
+        return data;
     } catch (error) {
         console.error('Error adding post:', error);
+        throw error;
     }
 };

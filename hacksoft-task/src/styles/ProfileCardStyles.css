@@ -79,3 +79,6 @@
   height: 20px;
   cursor: pointer;
 }
+.icon-button.selected .icon {
+  color: #ff6600; 
+}

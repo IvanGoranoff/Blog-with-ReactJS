@@ -5,11 +5,16 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState({
         name: 'Ivan Goranov',
-        title: 'Candidate for a front-end developer at HackSoft'
+        title: 'Candidate for a front-end developer at HackSoft',
+        avatar: 'http://localhost:3000/assets/avatar.png'
     });
 
     const updateUser = (newName, newTitle) => {
-        setUser({ name: newName, title: newTitle });
+        setUser({
+            ...user,
+            name: newName,
+            title: newTitle
+        });
     };
 
     return (
