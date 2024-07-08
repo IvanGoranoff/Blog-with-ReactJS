@@ -17,7 +17,6 @@ function Feed() {
         const fetchPosts = async () => {
             const data = await getPosts();
             setPosts(data);
-            console.log('Fetched posts:', data);
         };
 
         fetchPosts();

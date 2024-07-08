@@ -9,7 +9,6 @@ export const PostProvider = ({ children }) => {
     useEffect(() => {
         const fetchPosts = async () => {
             const data = await getPosts();
-            console.log('Fetched posts:', data);
             setPosts(data);
         };
 
@@ -17,7 +16,6 @@ export const PostProvider = ({ children }) => {
     }, []);
 
     const addNewPost = (post) => {
-        console.log('Adding new post:', post);
         setPosts(prevPosts => [post, ...prevPosts]);
     };
 
@@ -26,7 +24,6 @@ export const PostProvider = ({ children }) => {
     };
 
     const updatePostReactions = (id, reactions) => {
-        console.log('Updating post reactions:', id, reactions);
         setPosts(prevPosts =>
             prevPosts.map(post =>
                 post.id === id ? { ...post, reactions } : post
