@@ -146,3 +146,7 @@
   cursor: pointer;
   margin-left: 5px;
 }
+.icon-button.active {
+  font-weight: bold;
+  color: #ff6600;
+}

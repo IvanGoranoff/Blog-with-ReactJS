@@ -5,6 +5,7 @@ import avatar from '../assets/avatar.png';
 import { updatePost } from '../services/api';
 import { PostContext } from '../context/PostContext';
 import { UserContext } from '../context/UserContext';
+import { timeAgo } from '../utils/dateUtils';
 
 function Post({ post }) {
     const { posts, setPosts } = useContext(PostContext);
@@ -15,25 +16,37 @@ function Post({ post }) {
     const [showComments, setShowComments] = useState(false);
     const [expandedComments, setExpandedComments] = useState({});
     const [showMoreContent, setShowMoreContent] = useState(false);
-    const [selectedReaction, setSelectedReaction] = useState(null);
+    const [userReaction, setUserReaction] = useState(post.userReactions?.[user.name] || null);
 
-    const handleReaction = async (type) => {
-        const updatedReactions = {
-            ...reactions,
-            [type]: reactions[type] + 1
-        };
+    const handleReaction = async (reaction) => {
+        const currentReaction = post.userReactions?.[user.name];
+
+        let updatedReactions = { ...reactions };
+        let updatedUserReactions = { ...post.userReactions };
+
+        if (currentReaction) {
+            updatedReactions[currentReaction]--;
+        }
+
+        if (currentReaction === reaction) {
+            delete updatedUserReactions[user.name];
+            setUserReaction(null);
+        } else {
+            updatedReactions[reaction]++;
+            updatedUserReactions[user.name] = reaction;
+            setUserReaction(reaction);
+        }
+
         setReactions(updatedReactions);
-        setSelectedReaction(type);
-        const updatedPost = { ...post, reactions: updatedReactions };
-        await updatePost(post.id, { reactions: updatedReactions });
+        await updatePost(post.id, { reactions: updatedReactions, userReactions: updatedUserReactions });
 
-        const updatedPosts = posts.map(p => p.id === post.id ? updatedPost : p);
+        const updatedPosts = posts.map(p => p.id === post.id ? { ...p, reactions: updatedReactions, userReactions: updatedUserReactions } : p);
         setPosts(updatedPosts);
     };
 
     const handleComment = async () => {
         if (commentText.trim()) {
-            const newComment = { text: commentText, user: user.name, avatar };
+            const newComment = { text: commentText, user: user.name, avatar: user.avatar };
             const updatedComments = [...comments, newComment];
             setComments(updatedComments);
             setCommentText("");
@@ -59,13 +72,13 @@ function Post({ post }) {
     return (
         <div className="post">
             <div className="post-header">
-                <img src={avatar} alt="Avatar" className="avatar" />
+                <img src={avatar || avatar} alt="Avatar" className="avatar" />
                 <div className="post-info">
                     <div className="post-user">
                         <span className="name">{post.user}</span>
                         <span className="title">{post.title}</span>
                     </div>
-                    <span className="time">{post.time}</span>
+                    <span className="time">{timeAgo(post.time)}</span>
                 </div>
             </div>
             <div className={`post-content ${showMoreContent ? 'show' : ''}`}>
@@ -78,16 +91,28 @@ function Post({ post }) {
             </div>
             <div className="post-footer">
                 <div className="reactions">
-                    <button className="icon-button" onClick={() => handleReaction('like')}>
+                    <button
+                        className={`icon-button ${userReaction === 'like' ? 'active' : ''}`}
+                        onClick={() => handleReaction('like')}
+                    >
                         <FaThumbsUp className="icon" /> {reactions.like}
                     </button>
-                    <button className="icon-button" onClick={() => handleReaction('love')}>
+                    <button
+                        className={`icon-button ${userReaction === 'love' ? 'active' : ''}`}
+                        onClick={() => handleReaction('love')}
+                    >
                         <FaHeart className="icon" /> {reactions.love}
                     </button>
-                    <button className="icon-button" onClick={() => handleReaction('laugh')}>
+                    <button
+                        className={`icon-button ${userReaction === 'laugh' ? 'active' : ''}`}
+                        onClick={() => handleReaction('laugh')}
+                    >
                         <FaLaugh className="icon" /> {reactions.laugh}
                     </button>
-                    <button className="icon-button" onClick={() => handleReaction('surprise')}>
+                    <button
+                        className={`icon-button ${userReaction === 'surprise' ? 'active' : ''}`}
+                        onClick={() => handleReaction('surprise')}
+                    >
                         <FaSurprise className="icon" /> {reactions.surprise}
                     </button>
                     <button className="icon-button" onClick={() => setShowComments(!showComments)}>
@@ -99,7 +124,7 @@ function Post({ post }) {
                 <div className="comments-section">
                     {comments.map((comment, index) => (
                         <div key={index} className="comment">
-                            <img src={avatar} alt="Avatar" className="avatar" />
+                            <img src={avatar || avatar} alt="Avatar" className="avatar" />
                             <div className="comment-content">
                                 <span className="comment-user">{comment.user}</span>
                                 <span className="comment-text">

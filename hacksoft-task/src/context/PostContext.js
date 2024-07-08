@@ -21,6 +21,10 @@ export const PostProvider = ({ children }) => {
         setPosts(prevPosts => [post, ...prevPosts]);
     };
 
+    const updatePosts = (updatedPosts) => {
+        setPosts(updatedPosts);
+    };
+
     const updatePostReactions = (id, reactions) => {
         console.log('Updating post reactions:', id, reactions);
         setPosts(prevPosts =>
@@ -31,7 +35,7 @@ export const PostProvider = ({ children }) => {
     };
 
     return (
-        <PostContext.Provider value={{ posts, setPosts, addNewPost, updatePostReactions }}>
+        <PostContext.Provider value={{ posts, setPosts, addNewPost, updatePostReactions, updatePosts }}>
             {children}
         </PostContext.Provider>
     );
