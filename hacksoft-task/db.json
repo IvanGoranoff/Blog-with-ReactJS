@@ -9,7 +9,7 @@
       "likes": 4,
       "time": "20 minutes ago",
       "reactions": {
-        "like": 13,
+        "like": 24,
         "love": 5,
         "laugh": 3,
         "surprise": 2
@@ -36,8 +36,8 @@
       "likes": 2,
       "time": "Just now",
       "reactions": {
-        "like": 7,
-        "love": 4,
+        "like": 21,
+        "love": 6,
         "laugh": 2,
         "surprise": 1
       },
@@ -531,6 +531,54 @@
       "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png",
       "title": "Software Developer at HackSoft",
       "content": "asdasdasd",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "be07",
+      "user": "Current User",
+      "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png",
+      "title": "Software Developer at HackSoft",
+      "content": "асдасдасд",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "2bf6",
+      "user": "Current User",
+      "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png",
+      "title": "Software Developer at HackSoft",
+      "content": "асдасдасдас",
+      "likes": 0,
+      "time": "Just now",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "428e",
+      "user": "Ivan Goranov",
+      "avatar": "/static/media/avatar.e36b6f01b82bb5c3a972.png",
+      "title": "Software Developer at HackSoft",
+      "content": "asdassss",
       "likes": 0,
       "time": "Just now",
       "reactions": {

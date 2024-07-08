@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../styles/PostStyles.css';
 import { FaThumbsUp, FaHeart, FaLaugh, FaSurprise, FaComment } from 'react-icons/fa';
 import avatar from '../assets/avatar.png';
 import { updatePost } from '../services/api';
+import { PostContext } from '../context/PostContext';
 
 function Post({ post }) {
+    const { posts, updatePosts } = useContext(PostContext);
     const [reactions, setReactions] = useState(post.reactions || { like: 0, love: 0, laugh: 0, surprise: 0 });
     const [comments, setComments] = useState(post.comments || []);
     const [commentText, setCommentText] = useState("");
@@ -18,7 +20,11 @@ function Post({ post }) {
             [type]: reactions[type] + 1
         };
         setReactions(updatedReactions);
+        const updatedPost = { ...post, reactions: updatedReactions };
         await updatePost(post.id, { reactions: updatedReactions });
+
+        const updatedPosts = posts.map(p => p.id === post.id ? updatedPost : p);
+        updatePosts(updatedPosts);
     };
 
     const handleComment = async () => {
@@ -27,7 +33,11 @@ function Post({ post }) {
             const updatedComments = [...comments, newComment];
             setComments(updatedComments);
             setCommentText("");
+            const updatedPost = { ...post, comments: updatedComments };
             await updatePost(post.id, { comments: updatedComments });
+
+            const updatedPosts = posts.map(p => p.id === post.id ? updatedPost : p);
+            updatePosts(updatedPosts);
         }
     };
 

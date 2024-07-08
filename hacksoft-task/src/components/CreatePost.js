@@ -10,7 +10,7 @@ function CreatePost({ onPostCreated }) {
         e.preventDefault();
         if (content.trim()) {
             const newPost = {
-                user: 'Current User',
+                user: 'Ivan Goranov',
                 avatar,
                 title: 'Software Developer at HackSoft',
                 content,
