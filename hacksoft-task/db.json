@@ -36,7 +36,7 @@
       "likes": 2,
       "time": "Just now",
       "reactions": {
-        "like": 29,
+        "like": 30,
         "love": 8,
         "laugh": 3,
         "surprise": 1
@@ -725,6 +725,22 @@
       "content": "asdasdas",
       "likes": 0,
       "time": "08/07/2024, 04:04:34",
+      "reactions": {
+        "like": 0,
+        "love": 0,
+        "laugh": 0,
+        "surprise": 0
+      },
+      "comments": []
+    },
+    {
+      "id": "93e9",
+      "user": "Ivan Goranoff",
+      "avatar": "/static/media/avatar.1274aeb15610b25939d3.png",
+      "title": "Candidate for a front-end developer at HackSoft",
+      "content": "асдддд",
+      "likes": 0,
+      "time": "08/07/2024, 04:06:18",
       "reactions": {
         "like": 0,
         "love": 0,
