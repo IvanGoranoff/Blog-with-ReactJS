@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+HACKSOFT-TASK:
+Overview
+My App is a social media-like application built with React.js that allows users to create, view, and interact with posts. Users can comment, react to posts, and update their profile information. The app includes a feed of posts, a profile card, and functionality for adding and sorting posts.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+User Authentication: Users can update their profile information such as name and title.
+Post Creation: Users can create new posts.
+Post Interaction: Users can react to posts with likes, loves, laughs, and surprises. They can also comment on posts.
+Sorting Posts: Posts can be sorted by newest, oldest, and alphabetically by user name.
+Responsive Design: The app is designed to be responsive and works on various devices.
 
-## Available Scripts
+Installation
+Install dependencies:
 
-In the project directory, you can run:
+npm install
+Start the JSON server:
+npx json-server --watch db.json --port 5000
 
-### `npm start`
+Start the React development server:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm start
+Open your browser and navigate to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+http://localhost:3000
 
-### `npm test`
+File Structure
+src/
+components/
+Header.js: The header component displaying the app title and user info.
+ProfileCard.js: The profile card component displaying user stats and info.
+Feed.js: The feed component displaying the list of posts.
+Post.js: The post component displaying individual posts.
+CreatePost.js: The component for creating new posts.
+EditProfileModal.js: The modal component for editing profile information.
+LoadMoreButton.js: A button component to load more posts in the feed.
+context/
+UserContext.js: Context for managing user state.
+PostContext.js: Context for managing posts state.
+services/
+api.js: API service for interacting with the JSON server.
+styles/
+Various CSS files for styling the components.
+utils/
+dateUtils.js: Utility functions for date formatting.
+Main Components and Logic
+App.js
+The main application component that sets up the providers for UserContext and PostContext and renders the main components including Header, ProfileCard, Feed, and EditProfileModal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Header.js
+Displays the application title and user information. Clicking on the avatar or username opens the profile editing modal.
 
-### `npm run build`
+ProfileCard.js
+Displays the user's profile information and statistics (number of posts and reactions). Clicking on the avatar or edit icon opens the profile editing modal.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Feed.js
+Displays the list of posts and includes functionality to create new posts, load more posts, and sort posts by different criteria. It manages the state of visible posts and sorting options.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Post.js
+Displays individual posts with options to react (like, love, laugh, surprise) and comment. It manages the state of reactions and comments for each post and ensures only one reaction per user.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+CreatePost.js
+A form component that allows users to create new posts. It handles the submission of new posts and updates the post feed accordingly.
 
-### `npm run eject`
+EditProfileModal.js
+A modal component that allows users to edit their profile information (name and title). It handles the state of the modal (open/close) and updates the user context with the new information.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+UserContext.js
+Provides the context for user state management, including user information and functions to update the user.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+PostContext.js
+Provides the context for post state management, including the list of posts and functions to update the posts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+api.js
+Contains functions to interact with the JSON server API, including fetching posts, updating posts, and adding new posts.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+dateUtils.js
+Contains utility functions for formatting dates, such as converting timestamps to a "time ago" format.
